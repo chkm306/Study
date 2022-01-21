@@ -1,0 +1,64 @@
+public void reviewRead() {// 리뷰 파일 읽기
+		
+		File f = new File("Review.txt");
+		ArrayList temp = null;
+
+		try (BufferedReader br = new BufferedReader(new FileReader(f.getName()))) {
+			String tem = null;
+			
+			while ((tem = br.readLine()) != null) {
+				
+				String[] arr = tem.split(",");
+				
+				String title = arr[0];
+				String content = arr[1];
+				String[] arr2 = arr[2].split("-");
+				String id = arr[3];
+				
+				int year = Integer.valueOf(arr2[0]);
+				int month = Integer.valueOf(arr2[1]);
+				int day = Integer.valueOf(arr2[2]);
+				
+				CampingController cc = new CampingController();
+				Write w = new Write(title, content, cc.setCalendar(year, month, day), id);
+				
+				rWrite.add(w);
+				
+				
+				
+			}
+		} catch (FileNotFoundException e) {
+			System.out.println("리뷰저장 파일이 없습니다.");
+		}catch(EOFException e) {
+			
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	public void reviewSave() {//리뷰파일 저장하기
+		
+		File ex = new File("Review.txt");
+		
+		if(ex.exists()) {
+			ex.delete();
+		}
+		
+		File f = new File("Review.txt");
+		
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(f.getName()))){
+			
+			for(int i = 0; i<rWrite.size(); i++) {
+				bw.write(rWrite.get(i).toStrFile());
+				bw.newLine();
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}

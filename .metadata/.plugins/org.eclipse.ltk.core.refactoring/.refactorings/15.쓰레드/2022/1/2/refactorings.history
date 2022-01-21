@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;15.쓰레드/CampingController.java&apos; to &apos;CampingController22.java&apos;" description="Rename resource &apos;CampingController.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="CampingController.java" name="CampingController22.java" stamp="1641297922822" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;09.상속/src/com/uni/chap02_inherit 2&apos; to &apos;chap02_inherit2&apos;" description="Rename resource &apos;chap02_inherit 2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/uni/chap02_inherit 2" name="chap02_inherit2" stamp="1640336730494" updateReferences="true"/>
+</session>

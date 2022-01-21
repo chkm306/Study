@@ -1,0 +1,9 @@
+package com.study.practice06;
+
+public class Run {
+
+	public static void main(String[] args) {
+
+	}
+
+}

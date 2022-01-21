@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;10.다형성/src/com/uni/chap02_abstractAndInterface/model/vo/ISports.java&apos; to &apos;ISports1.java&apos;" description="Rename resource &apos;ISports.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/uni/chap02_abstractAndInterface/model/vo/ISports.java" name="ISports1.java" stamp="1640589202855" updateReferences="true"/>
+</session>

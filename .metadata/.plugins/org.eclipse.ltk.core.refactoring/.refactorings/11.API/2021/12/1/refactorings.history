@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;11.API/src/com/uni/chap02_stringBuffer_stringBulider&apos; to &apos;chap02_stringBuffer_stringBuilder&apos;" description="Rename resource &apos;chap02_stringBuffer_stringBulider&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/uni/chap02_stringBuffer_stringBulider" name="chap02_stringBuffer_stringBuilder" stamp="1640599447105" updateReferences="true"/>
+</session>

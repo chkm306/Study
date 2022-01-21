@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;04.제어문/src/com/uni/chap02/condition&apos; to &apos;loop&apos;" description="Rename resource &apos;condition&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/uni/chap02/condition" name="loop" stamp="1639465177799" updateReferences="true"/>
+</session>

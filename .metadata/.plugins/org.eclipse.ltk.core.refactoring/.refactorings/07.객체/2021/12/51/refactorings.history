@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;07.객체/src/com/uni/chap4_field&apos; to &apos;chap04_field&apos;" description="Rename resource &apos;chap4_field&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/uni/chap4_field" name="chap04_field" stamp="1639738860704" updateReferences="true"/>
+</session>
