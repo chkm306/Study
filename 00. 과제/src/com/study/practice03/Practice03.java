@@ -17,6 +17,7 @@ public class Practice03 {
 				System.out.println("잘못 입력하셨습니다.");
 			}
 		}*/
+		
 		if (num > 0) { // 조건문을 밖으로 빼니까 잘 작동함. 반복문 안에 조건문이 있을때는 작동을 못했음.
 			for (int i = 1; i <= num; i++) {
 				System.out.print(i + " ");
@@ -43,10 +44,10 @@ public class Practice03 {
 		}
 	}
 
-	public void method3() { // 고심끝에 조건식을 생각해냄....
+	/*public void method3() { // 고심끝에 조건식을 생각해냄....
 		int num = 4;
 		System.out.println("1 이상의 숫자를 입력하세요 : " + num);
-
+	
 		if (num > 0) {
 			for (int i = num; i > 0; i--) {
 				System.out.print(i + " ");
@@ -54,7 +55,12 @@ public class Practice03 {
 		} else {
 			System.out.println("잘못 입력하셨습니다.");
 		}
+	}*/
+	
+	public void method3() {
+		
 	}
+	
 
 	public void method4() {
 		for (;;) {
