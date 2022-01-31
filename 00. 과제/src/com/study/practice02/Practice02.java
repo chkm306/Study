@@ -66,6 +66,8 @@ public class Practice02 {
 		System.out.println("성적 : " + num4);
 
 		System.out.printf("%d학년 %d반 %d번 %s %s의 성적은 %.2f이다.", num1, num2, num3, name, result, num4);
+		System.out.println();
+
 	}
 
 	public void method6() {
@@ -75,7 +77,7 @@ public class Practice02 {
 	}
 
 	public void method7() { // 배열에 담아서 해보기
-		/*int num1 = 60;
+		int num1 = 60;
 		System.out.println("국어 : "+num1);
 		
 		int num2 = 80;
@@ -87,7 +89,7 @@ public class Practice02 {
 		System.out.println("합계 : "+(num1+num2+num3));
 		System.out.println("평균 : "+(double)((num1+num2+num3)/3));
 		System.out.println(num1 >= 40 && num2 >= 40 && num3 >= 40 && ((num1+num2+num3)/3)>=60 ? "합격":"불합격");
-		*/
+		
 		Scanner sc = new Scanner(System.in);
 		double sum = 0; // 총합
 		double ave = 0; // 평균
@@ -97,19 +99,21 @@ public class Practice02 {
 		while (true) {
 			try {
 				System.out.println("국어 : ");
-				double kor = sc.nextInt();
+//				double kor = sc.nextInt();
+				arr[0] = sc.nextDouble();
 				System.out.println("영어 : ");
-				double eng = sc.nextInt();
+//				double eng = sc.nextInt();
+				arr[1] = sc.nextDouble();
 				System.out.println("수학 : ");
-				double math = sc.nextInt();
-				
-				arr = new double[]{kor, eng, math};
+//				double math = sc.nextInt();
+				arr[2] = sc.nextDouble();
 				
 			} catch (InputMismatchException e) { // 왜 실수로 받았는데 이걸로 넘어가는지 모르겠네..
 				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
 				sc.next();
 				continue;
 			}
+			
 //			arr = new double[]{kor, eng, math};
 			
 			for(int i = 0; i < arr.length; i++) {
@@ -119,7 +123,8 @@ public class Practice02 {
 			ave = sum/arr.length;
 			
 			System.out.println("합계 : "+sum);
-			System.out.println("평균 : "+ave);
+			System.out.printf("평균 : %.1f %n",ave);
+			
 			break;
 		}
 
