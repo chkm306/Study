@@ -6,20 +6,20 @@ public class Run {
 
 	public static void main(String[] args) {
 		Practice03 p = new Practice03();
-//		System.out.println("---------1---------");
-//		p.method1();
+		System.out.println("---------1---------");
+		p.method1();
 //		System.out.println();
 //		System.out.println("---------2---------");
 //		p.method2();
-//		System.out.println("---------3---------");
-//		p.method3();
+		System.out.println("---------3---------");
+		p.method3();
 //		System.out.println();
 //		System.out.println("---------4---------");
 //		p.method4();
-//		System.out.println("---------5---------");
-//		p.method5();
-//		System.out.println("---------6---------");
-//		p.method6();
+		System.out.println("---------5---------");
+		p.method5();
+		System.out.println("---------6---------");
+		p.method6();
 //		System.out.println("---------7---------");
 //		p.method7();
 //		System.out.println("---------8---------");

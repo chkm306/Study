@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Practice05 {
-	Scanner sc = new Scanner(System.in);
 
 	public void method1() {
 		int[] arr = new int[10];
@@ -19,15 +18,17 @@ public class Practice05 {
 	public void method2() {
 		int[] arr = new int[10];
 
-		for (int i = arr.length; i > 0; i--) {
-			arr[i - 1] = i;
-			System.out.print(arr[i - 1] + " ");
+		int result = arr.length; // 길이 10이 담기고 줄어드는 값을 저장해줄 변수
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = result--;
+			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
 	}
 
 	public void method3() {
-		int num = 5;
+		int num = 10;
 		System.out.println("양의 정수 : " + num);
 
 		int[] arr = new int[num];
@@ -39,299 +40,254 @@ public class Practice05 {
 		System.out.println();
 	}
 
-	public void method4() { // 입력하고, 도출해서, for문으로 꺼내보기
+	public void method4() {
 		String[] arr = { "사과", "귤", "포도", "복숭아", "참외" };
-		System.out.println(arr[1]);
+
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i].equals("귤")) {
+				System.out.println(arr[i]);
+			}
+		}
 	}
 
-	public void method5() {// 다시풀기
+	public void method5() {
+		String str = "application";
+		System.out.println("문자열 : " + str);
 
-		System.out.println("문자열 : ");
-		String str = sc.nextLine();
+		char ch = 'a';
+		System.out.println("문자 : " + ch);
 
-		System.out.println("문자 : ");
-		char str1 = sc.nextLine().charAt(0);
+		System.out.printf("%s에 %s가 존재하는 위치 (인덱스) : ", str, ch);
 
-		int sum = 0;
-		int len = str.length();
+		char[] arr = new char[str.length()];
+		int num = 0;
 
-		char[] arr = new char[len];
-
-		System.out.printf("%s에 %s가 존재하는 위치 (인덱스) : ", str, str1);
-
-		for (int i = 0; i < len; i++) { // 약간 야매느낌
+		for (int i = 0; i < str.length(); i++) {
 			arr[i] = str.charAt(i);
-
-			if (arr[i] == str1) {
-				System.out.print(i + " "); // 인덱스 번호
-				sum++; // 안 쪽에서 이 변수를 if문이 돌때마다 증가하도록 하는 방법이 있구나!!!!!!!
+			// System.out.printf("arr[%s] = %s %n",i,arr[i]);
+			if (arr[i] == ch) {
+				System.out.print(i + " ");
+				num++;
 			}
 		}
 		System.out.println();
-		System.out.printf("%s 개수 : %d\n", str1, sum);
-
+		System.out.printf("%s 개수 : %s%n", ch, num);
 	}
 
 	public void method6() {
-		System.out.println("0 ~ 6 사이 숫자 입력 : ");
-		int num = sc.nextInt();
+		int num = 0;
+		System.out.println("0~6사이 숫자 입력 : " + num);
+		/*switch (num) {
+		case 0:
+			System.out.println("월요일");
+			break;
+		case 1:
+			System.out.println("화요일");
+			break;
+		case 2:
+			System.out.println("수요일");
+			break;
+		case 3:
+			System.out.println("목요일");
+			break;
+		case 4:
+			System.out.println("금요일");
+			break;
+		case 5:
+			System.out.println("토요일");
+			break;
+		case 6:
+			System.out.println("일요일");
+			break;
+		default:
+			System.out.println("잘못 입력하셨습니다.");
+		}*/
 
-		String[] arr = { "월", "화", "수", "목", "금", "토", "일" };
-
-		if (num <= 6 && num >= 0) {
-			for (int i = 0; i < arr.length; i++) {
-				System.out.print(arr[num] + "요일");
-				break;
-			}
+		String arr[] = { "월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일" }; // 이게 훨 편하네 ㅋㅋ
+		if (num < 7 && num >= 0) {
+			System.out.println(arr[num]);
 		} else {
 			System.out.println("잘못 입력하셨습니다.");
 		}
 	}
 
-	public void method7() { // 뭔가 느리다..
+	public void method7() {
+		Scanner sc = new Scanner(System.in);
 
-		System.out.println("정수 : ");
-		int num = sc.nextInt();
+		int num = 5;
+		System.out.println("정수 : " + num);
 
-		int sum = 0;
 		int[] arr = new int[num];
-
-		for (int i = 0; i < arr.length; i++) {
-
-			System.out.printf("배열 %d번째 인덱스에 넣을 값 : ", i);
-			int num1 = sc.nextInt(); // 값 받는 중
-
-			arr[i] = num1; // 배열에 값 담는중
-			sum += num1; // 총합 구하는 중
-
-			// System.out.println(Arrays.toString(arr)); // 혹시 몰라서 배열 출력하는 중
+		int sum = 0;
+		for (int i = 0; i < num; i++) {
+			System.out.printf("배열 %s번째 인덱스에 넣을 값 : ", i);
+			arr[i] = sc.nextInt();
+			sum += arr[i];
 		}
+		for (int i = 0; i < num; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+		 System.out.println(Arrays.toString(arr));
 		System.out.println("총합 : " + sum);
 	}
 
-	public void method8() {// 다시풀기
-//		while (true) {
-	
-			System.out.println("정수 : ");
-			int num = sc.nextInt();
-	
-			int count = 1; // 배열에 넣을 값 (생각도 못했음)
-			int[] arr = new int[num];
-	
-			if (num > 3 && num % 2 == 1) {
-				for (int i = 0; i < arr.length; i++) {
-	
-					arr[i] = count; // 배열에 증가하는 값 넣기
-	
-					if (i < arr.length / 2) { // 모르겠어서 가이드 참조한거
-						count++;
-					} else {
-						count--;
-					}
-					// arr[i] = i+1; // 내가 하던거
-					// if(i > num/2) { // 중간 이후부터 1로 됨
-					// arr[i] = i;
-					// }
-					System.out.println(Arrays.toString(arr));
-				}
-//				break;
-			} else {
-				System.out.println("다시 입력하세요.");
-			}
-		}
-	
+	public void method8() {
+		int num = 11;
+		System.out.println("정수 : " + num);
 
-	public void method9() {
-		
-		System.out.println("정수 : ");
-		int num = sc.nextInt();
-		
 		int[] arr = new int[num];
-	
-		int count = 1; // 배열 안에 들어갈 변수
-		
-		if (num > 3 && num % 2 == 1) {
-			for (int i = 0; i < arr.length; i++) {
-				arr[i] = count;
-				
-				if(i < arr.length/2) {
-					count++;
-				}else {
-					count--;
+		int count = 1;
+
+		if (num % 2 == 1 && num > 0) {
+
+			for (int i = 0; i < num; i++) {
+				if (i < num / 2) {
+					arr[i] = count++;
+				} else if (i >= num / 2) {
+					arr[i] = count--;
 				}
-				System.out.println(Arrays.toString(arr)); // 출력문을 안 씀
+				System.out.printf(arr[i] + " ");
 			}
-		}else {
+		} else {
 			System.out.println("다시 입력하세요.");
 		}
+		System.out.println();
+
+		if (num % 2 == 1 && num > 0) {
+			for (int i = 0; i < num; i++) {
+				arr[i] = count + 1;
+				if (i < arr.length / 2) { // 배열의 중간까지는
+					count++; // 1증가
+				} else {
+					count--; // 1감소
+				}
+				System.out.printf(arr[i] + " ");
+			}
+		} else {
+			System.out.println("다시 입력하세요.");
+		}
+		System.out.println();
 	}
-	
 
-	public void method546() {// 다시 풀기
-		String[] arr = { "로제", "양념", "후라이드", "파닭", "어니언", "간장", "치즈" };
+	public void method9() { // 에러남 왜인지 알아내기
+		String arr[] = { "양념", "후라이드", "로제", "불닭", "고추바사삭", "지코바" };
 
-		System.out.println("치킨 이름을 입력하세요 : ");
-		String chi = sc.nextLine();
-
-		boolean tf = false; // 생각지도 못했던 방법! 가이드 참고 ㅠ
+		String str = "양념";
+		System.out.println("치킨 이름을 입력하세요 : " + str);
 
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i].equals(chi)) { // arr.이퀄 하지말고 arr[i]로 찾기
-				tf = true;
-				break;
-			} /*else{ // 이게 계속 돌아간다 반복문 안의 if라서 false때 도나보다 ㅠ
-				System.out.println(chi + "치킨은 없는 메뉴입니다.");
-				break;
-				}*/
-		}
-		if (tf = true) {
-			System.out.println(chi + "배달 가능");
-		} else {
-			System.out.println(chi + "치킨은 없는 메뉴입니다.");
+			if (arr[i].equals(str)) {
+				System.out.printf("%d치킨 배달 가능", str);
+			} else {
+				System.out.printf("%d치킨은 없는 메뉴입니다", str);
+			}
 		}
 	}
 
 	public void method10() {
-
 		int[] arr = new int[10];
-
 		for (int i = 0; i < arr.length; i++) {
-			arr[i] = (int) (Math.random() * 10 - 1);
-		}
-		System.out.println(Arrays.toString(arr));
-	}
-
-	public void method11() { // 궁성쓰 강의 // 다시 풀기
-		
-		int[] arr = new int[10];
-		
-		int max = arr[0];
-		int min = arr[0];
-	
-		for (int i = 1; i < arr.length; i++) {
-	
 			arr[i] = (int) (Math.random() * 10 + 1);
-	
-			if (arr[i] > max) {
-				max = arr[i];
-			} else if (arr[i] < min) {
-				min = arr[i];
-			}
-		}
-		System.out.println(Arrays.toString(arr));
-	
-		System.out.println("최대값 : " + max);
-		System.out.println("최소값 : " + min);
-	}
-	
-	
-	/*public void method11() {
-		
-		int[] arr = new int[10];
-		
-		for(int i = 0; i < arr.length; i++) {
-			arr[i] = (int)(Math.random() * 10 +1);
-			System.out.print(arr[i]+" ");
+			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
-		Arrays.sort(arr);
-		
-		
-	}*/
+	}
+
+	public void method11() {
+		int[] arr = new int[10];
+
+		int max = 0;
+		int min = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+			System.out.print(arr[i] + " ");
+			/*if(arr[i] > arr[i]) {
+				System.out.println("최대값 : "+arr[i]);
+			}
+			if(arr[i] < arr[i]) {
+				System.out.println("최대값 : "+arr[i]);
+			}*/
+		}
+		System.out.println();
+
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				if (arr[i] < arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		System.out.println("최대값 : " + arr[9]);
+		System.out.println("최소값 : " + arr[0]);
+	}
 
 	public void method12() {
 		int[] arr = new int[10];
-		for (int i = 1; i < arr.length; i++) {
-			arr[i] = (int) (Math.random() * 10 + 1); // 난수 생성+배열에 담기
 
-			for (int j = 0; j < i; j++) {
-				if (arr[i] == arr[j]) { // 중복 제거
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 10 + 1);
+			for (int j = 0; j < i; j++) { // 여기 조건식 사실 잘 모르겟음
+				if (arr[i] == arr[j]) {
 					i--;
-					break;
+					// break; // 이걸 안했누
 				}
 			}
-
 		}
-		System.out.println(Arrays.toString(arr));
+
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
 	}
 
 	public void method13() {
-		System.out.print("주민등록번호 : ");
-		String str = sc.nextLine();
+		String mine = "123456-1234567";
+		System.out.println("주민등록번호(-포함) : " + mine);
 
-		char[] arr = new char[str.length()];
+		char[] arr = new char[mine.length()];
 
-		for (int i = 0; i < arr.length; i++) {
-			arr[i] = str.charAt(i);
-
-			if (i > 7) {
+		for (int i = 0; i < mine.length(); i++) {
+			/*if(i <= 7) {
+			arr[i] = mine.charAt(i);
+			}else if(i > 7) {
+				System.out.print("*");
+			}*/
+			if (i <= 7) {
+				arr[i] = mine.charAt(i);
+			} else if (i > 7) {
+//				System.out.print("*"); //이거쓰니까 띄어짐 ㅠ
 				arr[i] = '*';
 			}
-		}
-		// System.out.println(Arrays.toString(arr));
-		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]);
 		}
+//		Arrays.toString(arr);
+		System.out.println();
 	}
 
-	/*public void method14() {
-		int[] arr = new int[45];
-		
-		for(int i = 0; i < arr.length; i++) {
-			arr[i] = i+1;
-		} // 중복값이 있을리 없음
-		
-		int tmp = 0;
-		int j = 0;
-		
-		for(int i = 0; i < 6; i++) { //로또 출력되는 6숫자만 랜덤하게
-			j = (int) (Math.random() * 45); // 섞을 범위
-			tmp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = arr[i];
+	public void method14() {
+		int[] arr = new int[6];
+
+		for (int i = 0; i < arr.length; i++) {
+
+			arr[i] = (int) (Math.random() * 45 + 1);
+
+			for (int j = 0; j < i; j++) { // 여기 조건식 사실 잘 모르겟음
+				if (arr[i] == arr[j]) { // 중복제거
+					i--;
+				}
+				if (arr[i] < arr[j]) { // 오름차순 정렬
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
 		}
-		for(int i = 0; i < 6; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i]+" ");
 		}
-	}*/
-	public void method14() { // 까먹어서 가이드 봄..ㅋㅋ
-		int[] lotto = new int[6];
-
-		for (int i = 0; i < lotto.length; i++) {
-			lotto[i] = (int) (Math.random() * 45 + 1);
-
-			for (int j = 0; j < i; j++) { // 중복 제거
-				if (lotto[i] == lotto[j]) {
-					i--;
-					break;
-				}
-			}
-		}
-
-		for (int i = 0; i < lotto.length; i++) {
-			for (int j = i + 1; j < lotto.length; j++) {
-				if (lotto[i] > lotto[j]) {
-					int temp = lotto[i]; // 오름차순 정렬
-					lotto[i] = lotto[j];
-					lotto[j] = temp;
-				}
-			}
-		}
-		for (int i = 0; i < lotto.length; i++) { // 배열 출력
-			System.out.print(lotto[i] + " ");
-		}
-	}
-	void stack1() {
-		int x = 10;
-		stack2();
-	}
-	
-	void stack2() {
-		int y = 5;
-	}
-	
-	void main() {
-		stack1();
-		return 0;
 	}
 }

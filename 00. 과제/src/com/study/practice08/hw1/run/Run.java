@@ -8,8 +8,11 @@ public class Run {
 		NonStaticSample nss = new NonStaticSample();
 		
 		nss.printLottoNumbers();
+		
 		nss.outputChar(10, 'c');
+		
 		System.out.println("랜덤 영문자 출력 : "+nss.alphabette());
-		nss.mySubstring("apple", 1, 5);
+		
+		System.out.println(nss.mySubstring("apple", 2, 4));
 
 }}

@@ -15,18 +15,16 @@ public class Run {
 		
 		StaticSample ss = new StaticSample();
 		
-		String value = "Java";
-		System.out.println("value : "+value);
-
-		ss.setValue(value);
+		ss.setValue("Java");
+		System.out.println("value : "+ss.getValue());
+		
 		StaticSample.toUpper();
 		System.out.println("대문자로 : "+ss.getValue());
 		
 		System.out.println("길이 : "+ss.valueLength());
 		
 		System.out.println("PROGRAMMING 붙여서 : "+ss.valueConcat("PROGRAMMING"));
-		
-//		ss.setValue(value);
+
 		ss.setChar(0, 'C');
 		System.out.println("J > C : "+ss.getValue());
 	}

@@ -64,22 +64,22 @@ public class Practice06 {
 		}
 	}
 
-	public void method4() { // 다시 풀기 (답안지없이)
+	/*public void method4() { // 다시 풀기 (답안지없이)
 		int[][] arr = new int[4][4];
-		/*int a1 = 0;
+		int a1 = 0;
 		int a2 = 0;
 		int a3 = 0;
 		int a4 = 0;
 		int a5 = 0;
 		int a6 = 0;
-		int a7 = 0;*/
-
+		int a7 = 0;
+	
 		// 난수 생성 및 더하기.......
 		for (int i = 0; i < arr.length - 1; i++) {
 			for (int j = 0; j < arr[i].length - 1; j++) {
-
+	
 				arr[i][j] = (int) (Math.random() * 10 + 1);
-
+	
 				int num = arr.length-1;
 				
 				arr[i][3] += arr[i][j]; // 이걸 생각을 못 했네..
@@ -89,7 +89,7 @@ public class Practice06 {
 				//arr[0][3] = arr[0][0~2] 합
 				//arr[1][3] = arr[1][0~2] 합
 				//arr[2][3] = arr[2][0~2] 합
-
+	
 				// arr[i][3] = arr[i][j]++;
 				// a1 = arr[0][j];
 				// a2 += arr[1][j];
@@ -98,7 +98,7 @@ public class Practice06 {
 				System.out.printf("arr[%d][%d] = %d%n", i, j, arr[i][j]);
 			}
 		}
-
+	
 		// 출력
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[i].length; j++) {
@@ -106,19 +106,42 @@ public class Practice06 {
 			}
 			System.out.println();
 		}
-
+	
 		// arr[0][3] = a1;
 		// arr[1][3] = a2;
 		// arr[2][3] = a3;
 		// arr[0][0] + arr[0][1];
+	
+	}*/
 
+	public void method4() {
+		int[][] arr = new int[4][4];
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - 1; j++) {
+				arr[i][j] = (int) (Math.random() * 10 + 1);
+				
+				if (i < 3) {
+					System.out.println("i : "+i+" j : "+j);
+					arr[i][3] += arr[i][j];
+					arr[3][j] += arr[i][j];
+					arr[3][3] += arr[i][j];
+				}
+			}
+		}
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length; j++) {
+				System.out.printf("%4d",arr[i][j]);
+			}
+			System.out.println();
+		}
 	}
 
 	public void method5() {
-		
+
 		while (true) {
 			try {
-				
+
 				System.out.println("행 크기 : ");
 				int wid = sc.nextInt();
 
@@ -127,14 +150,14 @@ public class Practice06 {
 				char[][] arr = new char[wid][len];
 
 				if (wid > 0 && wid <= 10 && len > 0 && len <= 10) {
-					
+
 					for (int i = 0; i < arr.length; i++) {
 						for (int j = 0; j < arr[i].length; j++) {
 							arr[i][j] = (char) (Math.random() * 26 + 65);
 							System.out.printf("arr[%d][%d] = %s%n", i, j, arr[i][j]);
 						}
 					}
-					
+
 					for (int i = 0; i < arr.length; i++) {
 						for (int j = 0; j < arr[i].length; j++) {
 							System.out.printf("%s ", arr[i][j]);
@@ -248,7 +271,7 @@ public class Practice06 {
 				// System.out.printf("stu1[%d][%d] = %s%n", i, j, stu1[i][j]);
 			}
 		}
-		
+
 		for (int i = 0; i < stu1.length; i++) {
 			for (int j = 0; j < stu1[i].length; j++) {
 				System.out.print(stu1[i][j] + " ");
@@ -325,7 +348,7 @@ public class Practice06 {
 			for (int i = 0; i < stu2.length; i++) {
 				for (int j = 0; j < stu2[i].length; j++) {
 					if (stu2[i][j].equals(sea)) { // 2차원 배열이면 [][] 추가하고, printf의 문자열은 %s이다!!!!!!!!
-						System.out.printf("검색하신 %s 학생은 2분단 %s번째 줄 %s에 있습니다.%n", sea, i+1, j == 1 ? "오른쪽" : "왼쪽");
+						System.out.printf("검색하신 %s 학생은 2분단 %s번째 줄 %s에 있습니다.%n", sea, i + 1, j == 1 ? "오른쪽" : "왼쪽");
 					}
 				}
 			}

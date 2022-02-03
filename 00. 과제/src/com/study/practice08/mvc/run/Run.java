@@ -1,5 +1,6 @@
 package com.study.practice08.mvc.run;
 
+import com.study.practice08.mvc.controller.MemberController;
 import com.study.practice08.mvc.view.MemberView;
 
 public class Run {
@@ -8,6 +9,9 @@ public class Run {
 
 		MemberView mm = new MemberView();
 		mm.mainMenu();
+		
+//		MemberController mc = new MemberController();
+//		mc.readAge();
 		
 		
 	}
